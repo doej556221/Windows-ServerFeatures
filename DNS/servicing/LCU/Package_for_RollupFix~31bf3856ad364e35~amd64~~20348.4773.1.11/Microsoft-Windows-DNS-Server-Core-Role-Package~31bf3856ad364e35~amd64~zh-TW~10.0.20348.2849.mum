@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved.">
+  <assemblyIdentity name="Microsoft-Windows-DNS-Server-Core-Role-Package" version="10.0.20348.2849" processorArchitecture="amd64" language="zh-TW" buildType="release" publicKeyToken="31bf3856ad364e35" />
+  <package identifier="DNS-Server-Core-Role-Package_zh-TW" releaseType="Language Pack">
+    <parent disposition="detect" integrate="separate">
+      <assemblyIdentity name="Microsoft-Windows-DNS-Server-Core-Role-Package" version="10.0.20348.2849" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" />
+    </parent>
+    <update description="這將會安裝 DNS 伺服器。" displayName="DNS 伺服器" name="DNS-Server-Core-Role">
+      <mum2:customInformation xmlns:mum2="urn:schemas-microsoft-com:asm.v3">
+        <ServerComponent Description="網域名稱系統 (DNS) 伺服器提供 TCP/IP 網路的名稱解析。當 DNS 伺服器與 Active Directory 網域服務安裝在相同伺服器上時，DNS 伺服器較容易管理。如果選取 [Active Directory 網域服務] 角色，可以安裝和設定 DNS 伺服器與 Active Directory 網域服務一起運作。" DisplayName="DNS 伺服器" EventQuery="DnsServer.Events.xml" Id="13" Type="Role" UniqueName="DNS">
+          <Deploys>
+            <Update Name="DNS-Server-Core-Role" />
+          </Deploys>
+          <Version Major="8" Minor="0" />
+          <BestPractices>
+            <Model Id="Microsoft/Windows/DNSServer" />
+          </BestPractices>
+          <SystemServices>
+            <SystemService DefaultMonitoring="true" Name="dns" />
+          </SystemServices>
+        </ServerComponent>
+      </mum2:customInformation>
+      <applicable disposition="detect">
+        <detectUpdate>
+          <parent name="DNS-Server-Core-Role" />
+        </detectUpdate>
+      </applicable>
+      <component>
+        <assemblyIdentity name="Microsoft-Windows-DNS-Server-Core-Role-Deployment-LanguagePack" version="10.0.20348.2849" processorArchitecture="amd64" language="zh-TW" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+      </component>
+    </update>
+  </package>
+</assembly>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved.">
+  <assemblyIdentity name="Microsoft-Windows-DNS-Server-Full-Role-Package" version="10.0.20348.2849" processorArchitecture="amd64" language="tr-TR" buildType="release" publicKeyToken="31bf3856ad364e35" />
+  <package identifier="DNS-Server-Full-Role-Package_tr-TR" releaseType="Language Pack">
+    <parent disposition="detect" integrate="separate">
+      <assemblyIdentity name="Microsoft-Windows-DNS-Server-Full-Role-Package" version="10.0.20348.2849" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" />
+    </parent>
+    <update description="Bu seçenek DNS Sunucusu yükler." displayName="DNS Sunucusu" name="DNS-Server-Full-Role">
+      <mum2:customInformation xmlns:mum2="urn:schemas-microsoft-com:asm.v3">
+        <ServerComponent Description="Etki Alanı Adı Sistemi (DNS) Sunucusu, TCP/IP ağları için ad çözümlemesi sağlar. DNS Sunucusu, Active Directory Etki Alanı Hizmetleri ile aynı sunucuda yüklü olduğunda yönetilmesi daha kolay olur. Active Directory Etki Alanı Hizmetleri rolünü seçerseniz, DNS Sunucusunu ve Active Directory Etki Alanı Hizmetlerini yükleyip birlikte çalışacak şekilde yapılandırabilirsiniz." DisplayName="DNS Sunucusu" EventQuery="DnsServer.Events.xml" Id="13" Type="Role" UniqueName="DNS">
+          <Deploys>
+            <Update Name="DNS-Server-Full-Role" />
+          </Deploys>
+          <BestPractices>
+            <Model Id="Microsoft/Windows/DNSServer" />
+          </BestPractices>
+          <Version Major="8" Minor="0" />
+          <SystemServices>
+            <SystemService DefaultMonitoring="true" Name="dns" />
+          </SystemServices>
+        </ServerComponent>
+      </mum2:customInformation>
+      <applicable disposition="detect">
+        <detectUpdate>
+          <parent name="DNS-Server-Full-Role" />
+        </detectUpdate>
+      </applicable>
+      <component>
+        <assemblyIdentity name="Microsoft-Windows-DNS-Server-Full-Role-Deployment-LanguagePack" version="10.0.20348.2849" processorArchitecture="amd64" language="tr-TR" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+      </component>
+    </update>
+  </package>
+</assembly>

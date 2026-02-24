@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved.">
+  <assemblyIdentity name="Microsoft-Windows-DNS-Server-Full-Role-Package" version="10.0.20348.2849" processorArchitecture="amd64" language="sv-SE" buildType="release" publicKeyToken="31bf3856ad364e35" />
+  <package identifier="DNS-Server-Full-Role-Package_sv-SE" releaseType="Language Pack">
+    <parent disposition="detect" integrate="separate">
+      <assemblyIdentity name="Microsoft-Windows-DNS-Server-Full-Role-Package" version="10.0.20348.2849" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" />
+    </parent>
+    <update description="Det här installerar DNS-servern." displayName="DNS-server" name="DNS-Server-Full-Role">
+      <mum2:customInformation xmlns:mum2="urn:schemas-microsoft-com:asm.v3">
+        <ServerComponent Description="DNS-servern (Domain Name System) används för namnmatchning i TCP/IP-nätverk. DNS-servern är enklare att hantera när den är installerad på samma server som AD DS (Active Directory Domain Services). Om du väljer AD DS-rollen kan du installera och konfigurera DNS-servern och AD DS så att de fungerar tillsammans." DisplayName="DNS-server" EventQuery="DnsServer.Events.xml" Id="13" Type="Role" UniqueName="DNS">
+          <Deploys>
+            <Update Name="DNS-Server-Full-Role" />
+          </Deploys>
+          <BestPractices>
+            <Model Id="Microsoft/Windows/DNSServer" />
+          </BestPractices>
+          <Version Major="8" Minor="0" />
+          <SystemServices>
+            <SystemService DefaultMonitoring="true" Name="dns" />
+          </SystemServices>
+        </ServerComponent>
+      </mum2:customInformation>
+      <applicable disposition="detect">
+        <detectUpdate>
+          <parent name="DNS-Server-Full-Role" />
+        </detectUpdate>
+      </applicable>
+      <component>
+        <assemblyIdentity name="Microsoft-Windows-DNS-Server-Full-Role-Deployment-LanguagePack" version="10.0.20348.2849" processorArchitecture="amd64" language="sv-SE" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+      </component>
+    </update>
+  </package>
+</assembly>

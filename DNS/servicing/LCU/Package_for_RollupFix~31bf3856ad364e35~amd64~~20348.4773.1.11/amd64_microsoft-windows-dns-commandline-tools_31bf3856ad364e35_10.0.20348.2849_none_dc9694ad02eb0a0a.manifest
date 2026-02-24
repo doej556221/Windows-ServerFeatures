@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved.">
+  <assemblyIdentity name="Microsoft-Windows-DNS-CommandLine-Tools" version="10.0.20348.2849" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+  <dependency discoverable="no">
+    <dependentAssembly dependencyType="install">
+      <assemblyIdentity name="Microsoft-Windows-DNS-Server-DnsCmd" version="10.0.20348.2849" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+    </dependentAssembly>
+  </dependency>
+  <dependency discoverable="no">
+    <dependentAssembly dependencyType="install">
+      <assemblyIdentity name="Microsoft-Windows-DNS-Server-WMIv2Provider" version="10.0.20348.2849" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+    </dependentAssembly>
+  </dependency>
+  <dependency discoverable="no">
+    <dependentAssembly dependencyType="install">
+      <assemblyIdentity name="Microsoft-Windows-DNS-Server-WMIv2Provider" version="10.0.20348.2849" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+    </dependentAssembly>
+  </dependency>
+  <localization>
+    <resources culture="en-US">
+      <stringTable>
+        <string id="description" value="DNS Command Line Tools description TBA" />
+        <string id="displayName" value="DNS Command Line Tools" />
+      </stringTable>
+    </resources>
+  </localization>
+</assembly>

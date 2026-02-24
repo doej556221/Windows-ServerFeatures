@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved.">
+  <assemblyIdentity name="Microsoft-Windows-DNS-Server-Full-Role-Package" version="10.0.20348.2849" processorArchitecture="amd64" language="ja-JP" buildType="release" publicKeyToken="31bf3856ad364e35" />
+  <package identifier="DNS-Server-Full-Role-Package_ja-JP" releaseType="Language Pack">
+    <parent disposition="detect" integrate="separate">
+      <assemblyIdentity name="Microsoft-Windows-DNS-Server-Full-Role-Package" version="10.0.20348.2849" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" />
+    </parent>
+    <update description="DNS サーバーをインストールします。" displayName="DNS サーバー" name="DNS-Server-Full-Role">
+      <mum2:customInformation xmlns:mum2="urn:schemas-microsoft-com:asm.v3">
+        <ServerComponent Description="ドメイン ネーム システム (DNS) サーバーは、TCP/IP ネットワークの名前解決を行います。DNS サーバーは、Active Directory ドメイン サービスと同じサーバーにインストールすると簡単に管理できます。Active Directory ドメイン サービスの役割を選択すると、DNS サーバーと Active Directory ドメイン サービスが連携して動作するようにインストールおよび構成できます。" DisplayName="DNS サーバー" EventQuery="DnsServer.Events.xml" Id="13" Type="Role" UniqueName="DNS">
+          <Deploys>
+            <Update Name="DNS-Server-Full-Role" />
+          </Deploys>
+          <BestPractices>
+            <Model Id="Microsoft/Windows/DNSServer" />
+          </BestPractices>
+          <Version Major="8" Minor="0" />
+          <SystemServices>
+            <SystemService DefaultMonitoring="true" Name="dns" />
+          </SystemServices>
+        </ServerComponent>
+      </mum2:customInformation>
+      <applicable disposition="detect">
+        <detectUpdate>
+          <parent name="DNS-Server-Full-Role" />
+        </detectUpdate>
+      </applicable>
+      <component>
+        <assemblyIdentity name="Microsoft-Windows-DNS-Server-Full-Role-Deployment-LanguagePack" version="10.0.20348.2849" processorArchitecture="amd64" language="ja-JP" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+      </component>
+    </update>
+  </package>
+</assembly>

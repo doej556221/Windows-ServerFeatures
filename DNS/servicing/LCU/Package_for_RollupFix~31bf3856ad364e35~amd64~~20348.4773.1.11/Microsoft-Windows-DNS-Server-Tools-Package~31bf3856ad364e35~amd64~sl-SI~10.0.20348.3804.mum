@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved.">
+  <assemblyIdentity name="Microsoft-Windows-DNS-Server-Tools-Package" version="10.0.20348.3804" processorArchitecture="amd64" language="sl-SI" buildType="release" publicKeyToken="31bf3856ad364e35" />
+  <package identifier="DNS-Server-Tools-Package_sl-SI" releaseType="Language Pack">
+    <parent disposition="detect" integrate="separate">
+      <assemblyIdentity name="Microsoft-Windows-DNS-Server-Tools-Package" version="10.0.20348.3804" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" />
+    </parent>
+    <update description="This installs the DNS Server Tools." displayName="DNS Server Tools" name="DNS-Server-Tools">
+      <mum2:customInformation xmlns:mum2="urn:schemas-microsoft-com:asm.v3">
+        <ServerComponent Description="DNS Server Tools includes the DNS Manager snap-in, dnscmd.exe command-line tool and Windows PowerShell module for DNS Server." DisplayName="DNS Server Tools" Id="273" Parent="RSAT-Role-Tools" Type="Feature" UniqueName="RSAT-DNS-Server">
+          <Version Major="8" Minor="0" />
+          <Deploys>
+            <Update Name="DNS-Server-Tools" />
+          </Deploys>
+          <Relationships>
+            <OptionalCompanionFor Prerequisite="Server-Gui-Mgmt" Type="RSAT" UniqueName="DNS" />
+          </Relationships>
+        </ServerComponent>
+      </mum2:customInformation>
+      <applicable disposition="detect">
+        <detectUpdate>
+          <parent name="DNS-Server-Tools" />
+        </detectUpdate>
+      </applicable>
+      <package contained="false" integrate="hidden">
+        <assemblyIdentity name="Microsoft-Windows-DNS-Server-Tools-NanoServer-Package" version="10.0.20348.2849" processorArchitecture="amd64" language="sl-SI" buildType="release" publicKeyToken="31bf3856ad364e35" />
+      </package>
+    </update>
+    <update description="This installs the Microsoft-Windows-DNS-UI-Tools" displayName="Microsoft-Windows-DNS-UI-Tools" name="Microsoft-Windows-DNS-UI-Tools-1">
+      <applicable disposition="detect">
+        <detectUpdate>
+          <update name="DNS-Server-Tools" />
+        </detectUpdate>
+      </applicable>
+      <package contained="false" integrate="hidden">
+        <assemblyIdentity name="Microsoft-Windows-DNS-UI-Tools-Package" version="10.0.20348.3804" processorArchitecture="amd64" language="sl-SI" buildType="release" publicKeyToken="31bf3856ad364e35" />
+      </package>
+    </update>
+  </package>
+</assembly>

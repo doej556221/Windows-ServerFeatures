@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved.">
+  <assemblyIdentity name="Microsoft-Windows-DNS-Admin-ClientSnapin-Package" version="10.0.20348.1" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" />
+  <package identifier="Microsoft-Windows-DNS-Admin-ClientSnapin" releaseType="Feature Pack">
+    <update name="ccc9a9580eeb764a820bd9d47c1e9764">
+      <package contained="false" integrate="hidden">
+        <assemblyIdentity name="Microsoft-Windows-DNS-Admin-ClientSnapin-merged-Package" version="10.0.20348.1" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" />
+      </package>
+    </update>
+    <update name="8fdafd15c8895726ea524e5aeb3df5e6">
+      <package contained="false" integrate="hidden">
+        <assemblyIdentity name="Microsoft-Windows-DNS-Client-Management-Package" version="10.0.20348.1" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" />
+      </package>
+    </update>
+  </package>
+</assembly>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved.">
+  <assemblyIdentity name="Microsoft-Windows-DNS-Server-Core-Role-Package" version="10.0.20348.2849" processorArchitecture="amd64" language="it-IT" buildType="release" publicKeyToken="31bf3856ad364e35" />
+  <package identifier="DNS-Server-Core-Role-Package_it-IT" releaseType="Language Pack">
+    <parent disposition="detect" integrate="separate">
+      <assemblyIdentity name="Microsoft-Windows-DNS-Server-Core-Role-Package" version="10.0.20348.2849" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" />
+    </parent>
+    <update description="Installa il server DNS." displayName="Server DNS" name="DNS-Server-Core-Role">
+      <mum2:customInformation xmlns:mum2="urn:schemas-microsoft-com:asm.v3">
+        <ServerComponent Description="Il server DNS (Domain Name System) fornisce funzionalità di risoluzione dei nomi per le reti TCP/IP. La gestione del server DNS è più semplice se viene installato nello stesso server di Servizi di dominio Active Directory. Selezionando il ruolo Servizi di dominio Active Directory, è possibile installare e configurare il server DNS e Servizi di dominio Active Directory in modo da consentirne l'interazione." DisplayName="Server DNS" EventQuery="DnsServer.Events.xml" Id="13" Type="Role" UniqueName="DNS">
+          <Deploys>
+            <Update Name="DNS-Server-Core-Role" />
+          </Deploys>
+          <Version Major="8" Minor="0" />
+          <BestPractices>
+            <Model Id="Microsoft/Windows/DNSServer" />
+          </BestPractices>
+          <SystemServices>
+            <SystemService DefaultMonitoring="true" Name="dns" />
+          </SystemServices>
+        </ServerComponent>
+      </mum2:customInformation>
+      <applicable disposition="detect">
+        <detectUpdate>
+          <parent name="DNS-Server-Core-Role" />
+        </detectUpdate>
+      </applicable>
+      <component>
+        <assemblyIdentity name="Microsoft-Windows-DNS-Server-Core-Role-Deployment-LanguagePack" version="10.0.20348.2849" processorArchitecture="amd64" language="it-IT" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+      </component>
+    </update>
+  </package>
+</assembly>
